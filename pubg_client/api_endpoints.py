@@ -24,6 +24,7 @@ class ShardsEndpoint(Endpoint):
             auth=kwargs.get("auth"),
         )
 
+
 class PlayersEndpoint(Endpoint):
 
     def search(self, platform: str, account_id: str, **kwargs: Any) -> SyncAsync[Any]:
@@ -32,6 +33,7 @@ class PlayersEndpoint(Endpoint):
             method="GET",
             auth=kwargs.get("auth"),
         )
+
 
 class MatchesEndpoint(Endpoint):
     def search(self, platform: str, match_id: str, **kwargs: Any) -> SyncAsync[Any]:
