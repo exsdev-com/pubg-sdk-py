@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 httpx = "*"
 notebook = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
