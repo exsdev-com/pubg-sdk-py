@@ -1,0 +1,17 @@
+*.pyc
+*.sqlite3
+.coverage
+.DS_Store
+.venv
+node_modules
+.mypy_cache
+dist/
+build/
+lib/
+*.egg-info
+*.ipynb_checkpoints
+
+# pytest
+.cache
+*.lock
+
