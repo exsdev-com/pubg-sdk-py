@@ -11,6 +11,7 @@ from httpx import Request, Response
 
 from .api_endpoints import (
     ShardsEndpoint,
+    PlayersEndpoint,
 )
 from .errors import (
     APIResponseError,
@@ -66,6 +67,7 @@ class BaseClient:
         self.client = client
 
         self.shards = ShardsEndpoint(self)
+        self.players = PlayersEndpoint(self)
 
 
     @property
@@ -78,7 +80,7 @@ class BaseClient:
         client.timeout = httpx.Timeout(timeout=self.options.timeout_ms / 1_000)
         client.headers = httpx.Headers(
             {
-                "Pubg-Version": self.options.pubg_version,
+                # "Pubg-Version": self.options.pubg_version,
                 "User-Agent": "exsdev-com/pubg-sdk-py@0.0.1",
                 "Accept": "application/vnd.api+json"
             }

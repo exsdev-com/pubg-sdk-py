@@ -23,3 +23,12 @@ class ShardsEndpoint(Endpoint):
             # query=pick(kwargs, "start_cursor", "page_size"),
             auth=kwargs.get("auth"),
         )
+
+class PlayersEndpoint(Endpoint):
+
+    def search(self, platform: str, account_id: str, **kwargs: Any) -> SyncAsync[Any]:
+        return self.parent.request(
+            path=f"shards/{platform}/players?filter[playerNames]={account_id}",
+            method="GET",
+            auth=kwargs.get("auth"),
+        )
