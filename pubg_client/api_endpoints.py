@@ -32,3 +32,11 @@ class PlayersEndpoint(Endpoint):
             method="GET",
             auth=kwargs.get("auth"),
         )
+
+class MatchesEndpoint(Endpoint):
+    def search(self, platform: str, match_id: str, **kwargs: Any) -> SyncAsync[Any]:
+        return self.parent.request(
+            path=f"shards/{platform}/matches/{match_id}",
+            method="GET",
+            auth=kwargs.get("auth"),
+        )

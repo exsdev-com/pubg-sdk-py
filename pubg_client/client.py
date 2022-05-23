@@ -12,6 +12,7 @@ from httpx import Request, Response
 from .api_endpoints import (
     ShardsEndpoint,
     PlayersEndpoint,
+    MatchesEndpoint,
 )
 from .errors import (
     APIResponseError,
@@ -68,6 +69,7 @@ class BaseClient:
 
         self.shards = ShardsEndpoint(self)
         self.players = PlayersEndpoint(self)
+        self.matches= MatchesEndpoint(self)
 
 
     @property
